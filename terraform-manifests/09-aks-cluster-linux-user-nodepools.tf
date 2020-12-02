@@ -18,7 +18,6 @@ resource "azurerm_kubernetes_cluster_node_pool" "linux101" {
     "environment"   = var.environment
     "nodepoolos"    = "linux"
     "app"           = "java-apps"
-    "ui-apps"       = "react-apps"    
   }
   tags = {
     "nodepool-type" = "user"
