@@ -9,6 +9,9 @@ terraform-manifests
 
 # System Default Working Directory
 $(System.DefaultWorkingDirectory)/terraform-manifests
+$(Pipeline.Workspace)/terraform-manifests-out
+# List Files
+- bash: echo Contents in Pipeline Workspace Artifact Directory; ls -Ra $(System.DefaultWorkingDirectory)/terraform-manifests
 --------------------------------------------
 # Environment Name
 $(DEV_ENVIRONMENT)
@@ -23,6 +26,15 @@ $(Pipeline.Workspace)/terraform-manifests-out
 -var ssh_public_key=$(sshkey.secureFilePath) 
 -var environment=$(DEV_ENVIRONMENT) 
 -out $(Pipeline.Workspace)/terraform-manifests-out/$(DEV_ENVIRONMENT)-$(Build.BuildId).out
+
+# 1- way
+terraform plan
+terraform apply
+
+# 2-way
+terraform plan -out v1plan.out
+terraform apply v1plan.out
+
 
 # Dev Command Arguments for Terraform Apply
 $(Pipeline.Workspace)/terraform-manifests-out/$(DEV_ENVIRONMENT)-$(Build.BuildId).out
