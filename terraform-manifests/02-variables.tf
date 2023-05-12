@@ -1,5 +1,5 @@
 # Define Input Variables
-# 1. Azure Location (CentralUS)
+# 1. Azure Location (EastUS)
 # 2. Azure Resource Group Name 
 # 3. Azure AKS Environment Name (Dev, QA, Prod)
 
@@ -7,7 +7,7 @@
 variable "location" {
   type = string
   description = "Azure Region where all these resources will be provisioned"
-  default = "Central US"
+  default = "East US"
 }
 
 # Azure Resource Group Name
