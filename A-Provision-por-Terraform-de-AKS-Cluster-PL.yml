@@ -39,7 +39,7 @@ stages:
           backendServiceArm: 'SVC-Terraform-Azure-Connection'
           ensureBackend: true
           backendAzureRmResourceGroupName: 'terraform-storage-rg'
-          backendAzureRmResourceGroupLocation: 'eastus'
+          backendAzureRmResourceGroupLocation: 'centralus'
           backendAzureRmStorageAccountName: 'terraformstatechallenge'
           backendAzureRmContainerName: 'tfstatefiles'
           backendAzureRmKey: 'aks-base.tfstate'
