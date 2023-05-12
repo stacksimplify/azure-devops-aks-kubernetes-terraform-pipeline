@@ -113,7 +113,6 @@ stages:
 - stage: DeployQAAKSClusters
   jobs:
     - deployment: DeployQAAKSCluster
-      dependsOn: DeployDevAKSCluster
       displayName: DeployQAAKSCluster
       pool:
         vmImage: 'ubuntu-latest'
