@@ -58,7 +58,7 @@ stages:
 ## Step-4: Terraform Plan (Creacion del Plan)
 ## Step-5: Terraform Apply (Uso del plan en el paso anterior)
 
-- stage: DeployDEVAKSClusters
+- stage: DeployAKSClusters
   jobs:
     - deployment: DeployDevAKSCluster
       displayName: DeployDevAKSCluster
@@ -110,8 +110,6 @@ stages:
 ## Step-4: Terraform Plan (Creacion del Plan)
 ## Step-5: Terraform Apply (Uso del plan en el paso anterior)
 
-- stage: DeployQAAKSClusters
-  jobs:
     - deployment: DeployQAAKSCluster
       displayName: DeployQAAKSCluster
       pool:
@@ -144,7 +142,7 @@ stages:
                 command: 'plan'
                 workingDirectory: '$(Pipeline.Workspace)/terraform-manifests-out'
                 environmentServiceName: 'SVC-Terraform-Azure-Connection'
-                commandOptions: '-var ssh_public_key=$(sshkey.secureFilePath) -var environment=$(QA_ENVIRONMENT) -out $(Pipeline.Workspace)/terraform-manifests-out/$(DEV_ENVIRONMENT)-$(Build.BuildId).out'
+                commandOptions: '-var ssh_public_key=$(sshkey.secureFilePath) -var environment=$(QA_ENVIRONMENT) -out $(Pipeline.Workspace)/terraform-manifests-out/$(QA_ENVIRONMENT)-$(Build.BuildId).out'
                 allowTelemetryCollection: false
             - task: TerraformCLI@0
               displayName: Terraform Apply
