@@ -1,5 +1,5 @@
 trigger:
-- main
+- beta
 
 pool:
   vmImage: 'ubuntu-latest'
