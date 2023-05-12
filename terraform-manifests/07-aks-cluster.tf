@@ -37,10 +37,10 @@ resource "azurerm_kubernetes_cluster" "aks_cluster" {
 # Add On Profiles
   addon_profile {
     azure_policy { enabled = true }
-    oms_agent {
-      enabled                    = true
-      log_analytics_workspace_id = azurerm_log_analytics_workspace.insights.id
-    }
+#    oms_agent {
+#      enabled                    = true
+#      log_analytics_workspace_id = azurerm_log_analytics_workspace.insights.id
+#    }
   }
 
 # RBAC and Azure AD Integration Block
