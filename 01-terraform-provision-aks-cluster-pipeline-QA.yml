@@ -90,7 +90,7 @@ stages:
                 command: 'plan'
                 workingDirectory: '$(Pipeline.Workspace)/terraform-manifests-out'
                 environmentServiceName: 'SVC-Terraform-Azure-Connection'
-                commandOptions: '-var ssh_public_key=$(sshkey.secureFilePath) -var environment=$(QA_ENVIRONMENT) -out $(Pipeline.Workspace)/terraform-manifests-out/$(DEV_ENVIRONMENT)-$(Build.BuildId).out'
+                commandOptions: '-var ssh_public_key=$(sshkey.secureFilePath) -var environment=$(QA_ENVIRONMENT) -out $(Pipeline.Workspace)/terraform-manifests-out/$(QA_ENVIRONMENT)-$(Build.BuildId).out'
                 allowTelemetryCollection: false
             - task: TerraformCLI@0
               displayName: Terraform Apply
