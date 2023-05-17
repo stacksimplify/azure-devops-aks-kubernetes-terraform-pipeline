@@ -7,8 +7,6 @@ pool:
 variables:
 - name: DEV_ENVIRONMENT
   value: dev 
-- name: QA_ENVIRONMENT
-  value: qa 
 # Stage-1: Terraform Validate Stage
 ## Step-1: Publish Artifacts to Pipeline (Pipeline artifacts provide a way to share files between stages in a pipeline or between different pipelines. )
 ## Step-2: Install Latest Terraform (0.13.5) (Ideally not needed if we use default Ubuntu Agents)
