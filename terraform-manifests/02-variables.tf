@@ -48,15 +48,15 @@ variable "windows_admin_password" {
 }
 variable "cosmosdbaccountname" {
   type = string
-  default = "retocosmosdb"
+  default = "retocosmosdb_alpha"
 }
 
 variable "cosmosdbname" {
   type = string
-  default = "DemoDB"
+  default = "DemoDB_alpha"
 }
 
 variable "cosmosdbcontainer" {
   type = string
-  default = "DemoContainer"
+  default = "DemoContainer_alpha"
 }
