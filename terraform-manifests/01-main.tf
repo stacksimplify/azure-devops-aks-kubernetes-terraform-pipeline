@@ -24,6 +24,10 @@ terraform {
       source  = "hashicorp/random"
       version = "~> 3.0"
     }
+    helm = {
+      source  = "hashicorp/helm"
+      version = "~> 2.0"
+    }
   }
 
 # Terraform State Storage to Azure Storage Container
@@ -49,3 +53,8 @@ resource "random_pet" "aksrandom" {
 
 }
 
+provider "helm" {
+  kubernetes {
+    config_path = "~/.kube/config"  # Path to your kubeconfig file
+  }
+}
