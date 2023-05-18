@@ -48,7 +48,7 @@ variable "windows_admin_password" {
 }
 variable "cosmosdbaccountname" {
   type = string
-  default = "velidatutorialcosmosdb"
+  default = "retocosmosdb"
 }
 
 variable "cosmosdbname" {
