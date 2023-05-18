@@ -1,5 +1,5 @@
 resource "azurerm_cosmosdb_account" "db" {
-  name = "retocosmosdb"
+  name = "retocosmosdb_alpha"
   location = azurerm_resource_group.aks_rg.location
   resource_group_name = azurerm_resource_group.aks_rg.name
   offer_type = "Standard"
