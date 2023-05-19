@@ -1,0 +1,48 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: reto-frontend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: reto-frontend
+  template:
+    metadata:
+      labels:
+        app: reto-frontend
+    spec:
+      containers:
+        - image: mcr.microsoft.com/mslearn/samples/contoso-ship-manager:frontend
+          name: ship-manager-frontend
+          imagePullPolicy: Always
+          resources:
+            requests:
+              cpu: 100m
+              memory: 128Mi
+            limits:
+              cpu: 250m
+              memory: 256Mi
+          ports:
+            - containerPort: 80
+              name: http
+          volumeMounts:
+            - name: config
+              mountPath: /usr/src/app/dist/config.js
+              subPath: config.js
+      volumes:
+        - name: config
+          configMap:
+            name: frontend-config
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: frontend-config
+data:
+  config.js: |
+    const config = (() => {
+      return {
+        'VUE_APP_BACKEND_BASE_URL': 'http://reto-backend.5200834be53f4b05b214.eastus.aksapp.io',
+      }
+    })()

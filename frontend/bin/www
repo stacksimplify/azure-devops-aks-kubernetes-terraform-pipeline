@@ -1,0 +1,16 @@
+#!/usr/bin/env node
+'use strict'
+
+const express = require('express')
+const pck = require('../package.json')
+
+
+const app = express()
+
+app.get('/ping', (req, res) => {
+  res.status(200).end('Pong!')
+})
+
+app.use(express.static('./dist/', { maxage: '1d' }))
+
+app.listen(80, () => console.log('Frontend listening on port 80'))

@@ -1,0 +1,50 @@
+{
+  "name": "demo",
+  "version": "1.0.0",
+  "description": "Event sourcing demo application",
+  "main": "dist/index.js",
+  "scripts": {
+    "clean": "rm -rf ./dist",
+    "test": "npm run build && mocha test",
+    "lint": "tslint --project tsconfig.json",
+    "build": "tsc",
+    "build:debug": "npm run clean && npm run build -- --sourceMap",
+    "build:clean": "npm run clean && npm run build",
+    "build:watch": "tsc -w",
+    "build:start": "npm run build:clean && npm start",
+    "start": "node dist/index.js",
+    "start:debug": "concurrently -s all \"tsc -w\" \"DEBUG=expresso:*,gg:* nodemon dist/index.js\""
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run lint"
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "author": "Lucas Santos <lhs.santoss@gmail.com>",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/express": "^4.16.0",
+    "@types/mongodb": "^3.1.22",
+    "@types/node": "^10.11.6",
+    "concurrently": "^4.0.1",
+    "husky": "^1.1.2",
+    "mocha": "^5.2.0",
+    "nodemon": "^1.18.4",
+    "ts-node": "^7.0.1",
+    "tslint": "^5.11.0",
+    "tslint-config-standard": "^8.0.1",
+    "tslint-eslint-rules": "^5.4.0",
+    "typescript": "^3.1.1"
+  },
+  "dependencies": {
+    "@expresso/expresso": "^0.15.0",
+    "@irontitan/paradox": "^2.11.4",
+    "express-rescue": "^1.1.5",
+    "mongodb": "^3.1.10",
+    "sugar-env": "^1.5.3"
+  }
+}
