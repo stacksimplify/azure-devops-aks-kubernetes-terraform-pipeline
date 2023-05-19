@@ -27,6 +27,6 @@ spec:
               name: http
           env:
             - name: DATABASE_URI
-              value: "AccountEndpoint=https://retocosmosdb-alpha.documents.azure.com:443/;AccountKey=Q8bunIZ7pr6CIDIk3ysLipCI2HvdQmIbIR9fwr9VGj1jy2BEBd4B13mMI5u4tlLj6ByDfYZz7OugACDbhqF8EA==;"
+              value: "mongodb://retocosmosdb-alpha:cFHP3JsXzYLbt8XTEpGxNBrfsZ3fbvf7s57tf1n4aWv1ZVFn073zOHZkFykMtuSiCAe3Smx3DRtMACDbOxwWFA==@retocosmosdb-alpha.mongo.cosmos.azure.com:10255/?ssl=true&replicaSet=globaldb&retrywrites=false&maxIdleTimeMS=120000&appName=@retocosmosdb-alpha@"
             - name: DATABASE_DBNAME
               value: DemoDB-alpha
