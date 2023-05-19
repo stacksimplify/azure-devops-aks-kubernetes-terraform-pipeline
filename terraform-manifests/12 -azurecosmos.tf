@@ -3,7 +3,7 @@ resource "azurerm_cosmosdb_account" "db" {
   location = azurerm_resource_group.aks_rg.location
   resource_group_name = azurerm_resource_group.aks_rg.name
   offer_type = "Standard"
-  kind = "GlobalDocumentDB"
+  kind = "MongoDB"
 
   consistency_policy {
       consistency_level = "Session"
