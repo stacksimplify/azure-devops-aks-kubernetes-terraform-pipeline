@@ -1,0 +1,30 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: reto-frontend
+spec:
+  selector:
+    app: reto-frontend
+  ports:
+    - name: http
+      port: 80
+      targetPort: 80
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: reto-frontend
+  annotations:
+    kubernetes.io/ingress.class: addon-http-application-routing
+spec:
+  rules:
+    - host: reto.5200834be53f4b05b214.eastus.aksapp.io
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: reto-frontend
+                port:
+                    number: 80

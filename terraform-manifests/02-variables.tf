@@ -1,5 +1,5 @@
 # Define Input Variables
-# 1. Azure Location (CentralUS)
+# 1. Azure Location (EastUS)
 # 2. Azure Resource Group Name 
 # 3. Azure AKS Environment Name (Dev, QA, Prod)
 
@@ -7,7 +7,7 @@
 variable "location" {
   type = string
   description = "Azure Region where all these resources will be provisioned"
-  default = "Central US"
+  default = "East US"
 }
 
 # Azure Resource Group Name
@@ -43,7 +43,20 @@ variable "windows_admin_username" {
 # Windows Admin Password for k8s worker nodes
 variable "windows_admin_password" {
   type = string
-  default = "P@ssw0rd1234"
+  default = "P@ssw0rd123456"
   description = "This variable defines the Windows admin password k8s Worker nodes"  
 }
+variable "cosmosdbaccountname" {
+  type = string
+  default = "retocosmosdb-beta"
+}
 
+variable "cosmosdbname" {
+  type = string
+  default = "DemoDB-beta"
+}
+
+variable "cosmosdbcollection" {
+  type = string
+  default = "DemoCollection-beta"
+}
