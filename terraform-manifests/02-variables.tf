@@ -46,4 +46,17 @@ variable "windows_admin_password" {
   default = "P@ssw0rd123456"
   description = "This variable defines the Windows admin password k8s Worker nodes"  
 }
+variable "cosmosdbaccountname" {
+  type = string
+  default = "retocosmosdb-beta"
+}
 
+variable "cosmosdbname" {
+  type = string
+  default = "DemoDB-beta"
+}
+
+variable "cosmosdbcollection" {
+  type = string
+  default = "DemoCollection-beta"
+}
