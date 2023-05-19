@@ -56,7 +56,7 @@ variable "cosmosdbname" {
   default = "DemoDB-alpha"
 }
 
-variable "cosmosdbcontainer" {
+variable "cosmosdbcollection" {
   type = string
-  default = "DemoContainer-alpha"
+  default = "DemoCollection-alpha"
 }
