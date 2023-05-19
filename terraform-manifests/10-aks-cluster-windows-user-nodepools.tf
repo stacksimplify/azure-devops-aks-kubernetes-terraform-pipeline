@@ -26,4 +26,3 @@ resource "azurerm_kubernetes_cluster_node_pool" "win101" {
     "app"           = "dotnet-apps"
   }
 }
-*/
