@@ -16,7 +16,7 @@ resource "azurerm_kubernetes_cluster" "aks_cluster" {
     max_count            = 3
     min_count            = 1
     os_disk_size_gb      = 35
-    type           = "VirtualMachineScaleSets"
+#    type           = "VirtualMachineScaleSets"
     node_labels = {
       "nodepool-type" = "system"
       "environment"   = var.environment
