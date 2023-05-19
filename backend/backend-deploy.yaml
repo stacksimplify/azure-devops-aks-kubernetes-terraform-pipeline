@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: reto-backend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: reto-backend
+  template:
+    metadata:
+      labels:
+        app: reto-backend
+    spec:
+      containers:
+        - image: mongo:latest
+          name: reto-backend
+          resources:
+            requests:
+              cpu: 100m
+              memory: 128Mi
+            limits:
+              cpu: 250m
+              memory: 256Mi
+          ports:
+            - containerPort: 3000
+              name: http
+          env:
+            - name: DATABASE_URI
+              value: "mongodb://retocosmosdb-alpha:8IRPyPR5UzvvAwgx2PiBEaP6jDqgfv06GIKpwylyxx5YvnEpMhpa8W0PX8p8c67f2cJ30Cf3ZvDyACDbkbKg5Q==@retocosmosdb-alpha.mongo.cosmos.azure.com:10255/?ssl=true&replicaSet=globaldb&retrywrites=false&maxIdleTimeMS=120000&appName=@retocosmosdb-alpha@"
+            - name: DATABASE_DBNAME
+              value: DemoDB-alpha
