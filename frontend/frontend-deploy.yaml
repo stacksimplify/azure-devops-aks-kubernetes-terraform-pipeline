@@ -43,6 +43,6 @@ data:
   config.js: |
     const config = (() => {
       return {
-        'VUE_APP_BACKEND_BASE_URL': 'http://reto-backend.e083fab983c544c098d9.eastus.aksapp.io',
+        'VUE_APP_BACKEND_BASE_URL': 'http://reto-backend.5200834be53f4b05b214.eastus.aksapp.io',
       }
     })()
