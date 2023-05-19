@@ -1,0 +1,7 @@
+node_modules
+dist
+.envrc
+.envrc.sample
+.gitignore
+.editorconfig
+.prettierrc
