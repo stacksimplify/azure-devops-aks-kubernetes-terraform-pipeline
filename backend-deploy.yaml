@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: reto-backend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: reto-backend
+  template:
+    metadata:
+      labels:
+        app: reto-backend
+    spec:
+      containers:
+        - image: mcr.microsoft.com/mslearn/samples/contoso-ship-manager:backend
+          name: reto-backend
+          resources:
+            requests:
+              cpu: 100m
+              memory: 128Mi
+            limits:
+              cpu: 250m
+              memory: 256Mi
+          ports:
+            - containerPort: 3000
+              name: http
+          env:
+            - name: DATABASE_URI
+              value: "AccountEndpoint=https://retocosmosdb-alpha.documents.azure.com:443/;AccountKey=Q8bunIZ7pr6CIDIk3ysLipCI2HvdQmIbIR9fwr9VGj1jy2BEBd4B13mMI5u4tlLj6ByDfYZz7OugACDbhqF8EA==;"
+            - name: DATABASE_DBNAME
+              value: DemoDB-alpha
