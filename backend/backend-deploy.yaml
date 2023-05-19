@@ -13,7 +13,7 @@ spec:
         app: reto-backend
     spec:
       containers:
-        - image: mcr.microsoft.com/mslearn/samples/contoso-ship-manager:backend
+        - image: mongo:latest
           name: reto-backend
           resources:
             requests:
